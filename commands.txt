@@ -1,4 +1,4 @@
-version:1.2.1.4.1 :12.06.2020
+version:1.2.1.5.2 : 23.06.2020
 _________________________________
 
 
@@ -75,13 +75,13 @@ sudo hdparm -Tt /dev/sda        -скорость диска
 sudo smartctl -a /dev/sda       -проверка с.м.а.р.т.а диска
 
 
-hddtemp /dev/sda        -температура диска
+hddtemp /dev/sda         -температура диска
 
 
-balooctl disable        -отключить baloo
+balooctl disable           -отключить baloo
 
 
-free -h                -потребление ОЗУ
+free -h                          -потребление ОЗУ
 
 
 файловая система ntfs:
@@ -100,10 +100,11 @@ mkisofs -J -o obraz.iso /var/cache/pacman/pkg
 Проверка хостов в локальной сети-
 
 arp -en
----
+
 nmap -sn 192.168.1.0/24
 
 
+-------------
 
 Создать пустой файл-
 
@@ -114,7 +115,7 @@ dd if=/dev/zero of=image.txt bs=1024M count=1
 dd of=file.txt bs=1 count=0 seek=100G
 
 --------
-gpg-
+gpg:
 
 
 md5sum-
@@ -150,21 +151,50 @@ gpg --quick-add-key отпечаток rsa1024 sign,encr,auth none
 удалить ключи gpg-
 
 gpg --delete-secret-keys 0x12345678
+
 gpg --delete-keys 0x12345678
 
 
-
+report:
 
 ssa --diag --f report.txt
 
-git fix-
+
+
+git fix:
 
 git config --global push.rebase false
 
 git config --global push.default simple
 
 
----------------------------
+
+------------------------------
+
+фрагментация диска:
+
+степень фрагментации-
+
+sudo e4defrag -c /путь до диска
+
+
+дефрагментация диска-
+
+sudo e4defrag -v /путь до диска
+
+
+
+информаия о файловой структуре-
+
+sudo tune2fs -l /путь до диска
+
+
+изменить резервную область диска на 1%
+
+sudo tune2fs -m 1 /путь до диска
+
+
+-------------------------------
 
 arch-chroot-
 
@@ -437,8 +467,7 @@ http://bit.ly/2JJz7Qa
 
 #Speedtest, #Ubuntu
 
-
-
+
 
 ___________________________________________________________________________________________________________________________________________________________________________________________________________________
 
